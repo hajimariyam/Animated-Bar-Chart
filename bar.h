@@ -1,88 +1,86 @@
-// bar.h
-// TO DO:  add header comment here.  Also add function header comments below.
+/*  bar.h implements the Bar class by aggregating related information (name, value, and category) 
+    for use in a bar chart. For example, a bar drawn in a bar chart would represent:
+        name = Beijing, value = 672, and category = East Asia
+
+    The class implements both a default and a parameterized constructor, a destructor, and 
+    getters for each private member variable. The class also overloads four comparison operators 
+    that compare any two Bar objects by their value. These operators can be used to sort a list
+    of Bar objects and achieve a bar graph that is plotted in sorted, descending order.
+
+    CS 251 - Data Structures 
+    Project 3 - Animated Bar Chart
+
+    Author: Mariyam Haji 
+    NetID: mhaji7
+    System: Visual Studio Code on Windows 10 
+*/
+
 
 #include <iostream>
 #include <string>
-#include "myrandom.h" // used in graders, do not remove
+#include "myrandom.h"       // used in graders, do not remove
 using namespace std;
 
-//
+
 // Bar
-//
-class Bar {
- private:
-    // Private member variables for a Bar object
-    // TO DO:  Define private member variables for this class
-    // NOTE: You should not be allocating memory on the heap for this class.
+class Bar 
+{
+    private:
+        // Private member variables for a Bar object
+        string name;
+        int value;
+        string category;
 
- public:
+    public:
+        // Public member functions for a Bar object
+        
+        // Default constructor
+        Bar() {
+            name = "";
+            value = 0;
+            category = "";
+        }
 
-    // default constructor:
-    Bar() {
-        
-        // TO DO:  Write this constructor.
-        
-    }
+        // Parameterized constructor
+        Bar(string name, int value, string category) {
+            this->name = name;
+            this->value = value;
+            this->category = category;
+        }
 
-    //
-    // a second constructor:
-    //
-    // Parameter passed in constructor Bar object.
-    //
-    Bar(string name, int value, string category) {
-        
-        // TO DO:  Write this constructor.
-        
-    }
+        // Destructor
+        virtual ~Bar() {
+            // EMPTY: no memory allocation on the heap for Bar class
+        }
 
-    // destructor:
-    virtual ~Bar() {
-        
-        // TO DO:  Write this destructor or leave empty if not needed.
-        
-    }
+        // Accessor functions for each private data member
+        string getName() {
+            return name;
+        }
 
-    // getName:
-	string getName() {
-        
-        // TO DO:  Write this function.
-        
-        return "";  // TO DO:  update this, it is only here so code compiles.
-	}
+        int getValue() {
+            return value;
+        }
 
-    // getValue:
-	int getValue() {
-        
-		// TO DO:  Write this function.
-        
-        return 0;    // TO DO:  update this, it is only here so code compiles.
-	}
+        string getCategory() {            
+            return category;
+        }
 
-    // getCategory:
-	string getCategory() {
-        
-        // TO DO:  Write this function.
-        
-        return ""; // TO DO:  update this, it is only here so code compiles.
-	}
+        // Operators to allow comparing of two Bar objects based on the their value
+        bool operator<(const Bar &other) const {
+            return (this->value < other.value);
+        }
 
-	// operators
-    // TO DO:  Write these operators.  This allows you to compare two Bar
-    // objects.  Comparison should be based on the Bar's value.  For example:
-	bool operator<(const Bar &other) const {
-        return true;  // TO DO:  update this, it is only here so code compiles.
-	}
+        bool operator<=(const Bar &other) const {
+            return (this->value <= other.value);
+        }
 
-	bool operator<=(const Bar &other) const {
-        return true;  // TO DO:  update this, it is only here so code compiles.
-	}
+        bool operator>(const Bar &other) const {
+            return (this->value > other.value);
+        }
 
-	bool operator>(const Bar &other) const {
-        return true;  // TO DO:  update this, it is only here so code compiles.
-	}
-
-	bool operator>=(const Bar &other) const {
-        return true;  // TO DO:  update this, it is only here so code compiles.
-	}
+        bool operator>=(const Bar &other) const {
+            return (this->value >= other.value);
+        }
 };
 
