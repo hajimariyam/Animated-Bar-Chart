@@ -1,24 +1,19 @@
-/*  bar.h implements the Bar class by aggregating related information (name, value, and category) 
-    for use in a bar chart. For example, a bar drawn in a bar chart would represent:
-        name = Beijing, value = 672, and category = East Asia
+/*
+		CS 251 - Data Structures
+		Project 3 - Animated Bar Chart
+		Author: Mariyam Haji
+		NetID: mhaji7
+    	System: Visual Studio Code with Ubuntu (WSL 2) on Windows 10 
 
-    The class implements both a default and a parameterized constructor, a destructor, and 
-    getters for each private member variable. The class also overloads four comparison operators 
-    that compare any two Bar objects by their value. These operators can be used to sort a list
-    of Bar objects and achieve a bar graph that is plotted in sorted, descending order.
-
-    CS 251 - Data Structures 
-    Project 3 - Animated Bar Chart
-
-    Author: Mariyam Haji 
-    NetID: mhaji7
-    System: Visual Studio Code on Windows 10 
+		bar.h - Bar class
+		Purpose: Implement the Bar class by aggregating related information 
+            (name, value, category) for use in a BarChart object.
 */
 
 
 #include <iostream>
 #include <string>
-#include "myrandom.h"       // used in graders, do not remove
+#include "myrandom.h"       // used by graders, do not remove
 using namespace std;
 
 
@@ -26,34 +21,35 @@ using namespace std;
 class Bar 
 {
     private:
-        // Private member variables for a Bar object
-        string name;
-        int value;
-        string category;
+        // Private member variables for the abstraction
+        string name;            // data column #2
+        int value;              // data column #4
+        string category;        // data column #5
 
     public:
         // Public member functions for a Bar object
         
-        // Default constructor
+        // default constructor:
         Bar() {
             name = "";
             value = 0;
             category = "";
         }
 
-        // Parameterized constructor
-        Bar(string name, int value, string category) {
+        // parameterized constructor:
+        //      @params read-in values from corresponding columns in a row of data
+        Bar (string name, int value, string category) {
             this->name = name;
             this->value = value;
             this->category = category;
         }
 
-        // Destructor
+        // destructor:
         virtual ~Bar() {
             // EMPTY: no memory allocation on the heap for Bar class
         }
 
-        // Accessor functions for each private data member
+        // accessor functions for each private data member:
         string getName() {
             return name;
         }
@@ -66,7 +62,10 @@ class Bar
             return category;
         }
 
-        // Operators to allow comparing of two Bar objects based on the their value
+        // overloaded comparison operators:
+        //      compare any two Bar objects by their value and sort a list of Bar objects
+        //      to achieve a bar graph that is plotted in sorted, descending order
+        
         bool operator<(const Bar &other) const {
             return (this->value < other.value);
         }
