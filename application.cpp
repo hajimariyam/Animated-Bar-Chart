@@ -21,8 +21,8 @@
 			the animation- if they want to carefully analyze the data, or enjoy a quick data 
 			visualization. It could also be used for debugging purposes.
 
-		To Run: In barchartanimate.h, in animate(), uncomment lines 175-190 and line 201 and 
-			comment line 202. Run application.cpp, which calls animate() on a BarChartAnimate 
+		To Run: In barchartanimate.h, in animate(), uncomment lines 179-194 and line 205 and 
+			comment line 206. Run application.cpp, which calls animate() on a BarChartAnimate 
 			object. When prompted for input, follow the instructions provided.
 */
 
@@ -59,7 +59,7 @@ int main()
 		bca.addFrame(inFile);
 	}
 	
-	bca.animate(cout, 10, -1);
+	bca.animate(cout, 12, -1);
 
     return 0;
 }
