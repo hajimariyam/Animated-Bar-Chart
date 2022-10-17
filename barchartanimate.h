@@ -99,8 +99,12 @@ class BarChartAnimate
             getline (file, tempString);                         // blank line
             getline (file, tempString);                         // total # of records in group
 
+            // if input is invalid, reset to 0, else convert to int
             if (tempString != "") {
                 numRecords = stoi(tempString);
+                if (numRecords < 0) {
+                    numRecords = 0;
+                }
             }
             else {
                 numRecords = 0;

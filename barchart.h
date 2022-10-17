@@ -72,7 +72,12 @@ class BarChart
 
         // parameterized constructor:
         //      @param n Number of Bar objects to allocate memory for
-        BarChart(int n) {
+        BarChart(int n) 
+        {
+            if (n < 0) {
+                n = 0;
+            }
+
             bars = new Bar[n];
             capacity = n;
             size = 0;
@@ -163,6 +168,10 @@ class BarChart
         //      @return false if BarChart object is full
         bool addBar(string name, int value, string category) 
         {
+            if (value < 0) {
+                value = 0;
+            }
+
             Bar newBar (name, value, category);
             if (capacity > size) {
                 bars[size] = newBar;
