@@ -177,7 +177,7 @@ class BarChartAnimate
             string tempInput;
             int delayTime;
 
-            cout << "Enter any number < 0 for the default animation speed or a number >= 0 by which you want to delay each frame: ";
+            cout << "Enter 2 for the default animation speed or any number >= 0 by which you want to delay each frame: ";
             cin >> tempInput;
             try {
                 delayTime = stoi(tempInput);
