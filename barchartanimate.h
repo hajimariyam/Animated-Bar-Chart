@@ -168,28 +168,27 @@ class BarChartAnimate
         // animate:
         //      Produce the final Bar Chart Animation by displaying each frame stored in barcharts 
         //      and pausing between each frame via usleep() for an animation effect
-        //      **Creative Component is commented out, see header comment in application.cpp
+        //      **For creative component, see header comment in application.cpp
         //      @param output Any stream (cout, filestream, stringstream)
         //      @param top Number of bars to graph for each frame (top 10? top 12?)
         //      @param endIter Number of iterations (frames) to graph for the animation, -1 for all
         void animate(ostream &output, int top, int endIter) 
         {
-            // string tempInput;
-            // int delayTime;
+            string tempInput;
+            int delayTime;
 
-            // cout << "Enter a number greater than 0 (higher number, more delay) "
-            //      << "by which you want to delay each frame: ";
-            // cin >> tempInput;
-            // try {
-            //     delayTime = stoi(tempInput);
-            //     if (delayTime <= 0) {
-            //         delayTime = 3;
-            //     }
-            // }
-            // catch (exception& e) {
-            //     cout << "Invalid input for frame delay time, exiting program..." << '\n';
-            //     exit(-1);
-            // }
+            cout << "Enter any number < 0 for the default animation speed or a number >= 0 by which you want to delay each frame: ";
+            cin >> tempInput;
+            try {
+                delayTime = stoi(tempInput);
+                if (delayTime < 0) {
+                    delayTime = 2;
+                }
+            }
+            catch (exception& e) {
+                cout << "Invalid input for frame delay time, exiting program..." << '\n';
+                exit(-1);
+            }
 
             unsigned int microsecond = 50000;
 
@@ -200,9 +199,8 @@ class BarChartAnimate
             // for endIter amount of BarChart objects in BarchartAnimate barcharts array..
             for (int thisFrame = 0; thisFrame < endIter - 1; thisFrame++) 
             {
-                // usleep (delayTime * microsecond);
-                usleep (3 * microsecond);        // delay period
-                output << CLEARCONSOLE;          // to print each frame at the same place
+                usleep (delayTime * microsecond);    // delay period
+                output << CLEARCONSOLE;              // to print each frame at the same place
                 output << BLACK << title << "\n" << source << endl;
                 barcharts[thisFrame].graph (output, colorMap, top);
                 output << BLACK << xlabel << "\nFrame: " << barcharts[thisFrame].getFrame() << endl; 
