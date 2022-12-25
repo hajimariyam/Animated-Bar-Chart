@@ -1,8 +1,6 @@
 /*
-		CS 251 - Data Structures
-		Project 3 - Animated Bar Chart
+		Project: Animated Bar Chart
 		Author: Mariyam Haji
-		NetID: mhaji7
     	System: Visual Studio Code with Ubuntu (WSL 2) on Windows 10 
 
 		barchart.h - BarChart class
