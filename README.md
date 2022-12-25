@@ -8,12 +8,13 @@ This project suggests the use of a Linux terminal and may not work otherwise.
 <img src='https://github.com/hajimariyam/Animated-Bar-Chart/blob/main/gifs/barchartAnimationLight.gif' width='45%' />
 
 ## User Interface
-At the onset of the program, the user is prompted to input the filename used for the animation and set a playback rate. The higher the number, the slower the animation. Entering a number less than or equal to 0 suggests the default playback speed.
+At the onset of the program, the user is prompted to input the filename used for the animation and set a playback rate. The number must be >= 0; the greater the number, the slower the animation. Entering a number less than 0 suggests the default playback speed, which is 2.
 
 The appropriate color codes in barchart.h should be used depending on if the terminal is in light or dark mode.
 
 ## Data File Format
-A bar chart animation data file must be organized as a sequence of lines:
+The data file for the bar chart animation should be in the 'datafiles' folder.
+Each file must be organized as a sequence of lines:
 - **Line 1:** title of data
 - **Line 2:** x-axis label
 - **Line 3:** source of data
