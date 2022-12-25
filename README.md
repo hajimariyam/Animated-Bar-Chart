@@ -2,12 +2,12 @@
 
 Animated bar charts spread virally over social media over the past few years because they are a surprisingly simple, yet powerful, way to tell a story about categorical data over time. 
 
-This is a C++ program that generates a text-based animated bar chart visualization for a given data file.
+This is a C++ program that generates a text-based animated bar chart for a given data file.
 
 This project suggests the use of a Linux terminal and may not work otherwise.
 
-<img src='https://github.com/hajimariyam/Animated-Bar-Chart/blob/main/gifs/barchartAnimationDark.gif' width='45%' />
-<img src='https://github.com/hajimariyam/Animated-Bar-Chart/blob/main/gifs/barchartAnimationLight.gif' width='45%' />
+<img src='https://github.com/hajimariyam/Animated-Bar-Chart/blob/main/gifs/barchartAnimationDark.gif' width='55%' />
+<img src='https://github.com/hajimariyam/Animated-Bar-Chart/blob/main/gifs/barchartAnimationLight.gif' width='55%' />
 
 ## User Interface
 At the onset of the program, the user is prompted to input the filename used for the animation and set a playback rate. The number must be greater than or equal to 0; the greater the number, the slower the animation. Entering a number less than 0 suggests the default playback speed, which is 2.
